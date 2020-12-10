@@ -1,0 +1,12 @@
+<app-tabla class="table" [ds]='dataSourceMantenimientosCorrectivos' 
+                         [columns]='columnsToDisplay' 
+                         [width]="'90%'"
+                         (clickRow)="clickedRow($event)"
+                         [title]="['Mantenimientos correctivos']"
+                         [includeButton]="true"
+                         [nameForButton]="['Nuevo correctivo']"
+                         [routeForButton]="['formcorrectivo']">
+</app-tabla>
+
+
+

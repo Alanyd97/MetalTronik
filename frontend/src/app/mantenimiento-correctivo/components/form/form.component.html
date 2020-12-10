@@ -1,0 +1,141 @@
+<div class="form-container">
+
+  <div class="card">
+
+    <h2 class="card-header">
+      {{section}}
+    </h2>
+
+    <div class="card-body">
+  
+      <form [formGroup]="mantenimientoCorrectivoForm" (ngSubmit)="saveForm()">
+
+        <div class="form-row">
+          <div class="col">
+          <label for="nrocorrectivo">Nro de mantenimiento correctivo</label>
+          <app-input [type]="'onlyNumber'" 
+                     [parentForm]="mantenimientoCorrectivoForm"  
+                     [control]="mantenimientoCorrectivoForm.controls.nrocorrectivo"
+                     [placeholder]="'Ingrese nro de mantenimiento correctivo'">
+          </app-input>
+          </div>
+
+          <div class="col">
+          <label for="tipofalla">Tipo de falla</label>
+          <app-input [type]="'onlyNumber'" 
+                     [parentForm]="mantenimientoCorrectivoForm" 
+                     [control]="mantenimientoCorrectivoForm.controls.tipofalla"
+                     [placeholder]="'Ingrese nro de tipo de falla'">
+          </app-input>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col">
+          <label for="encargo1_cod">Realizo 1</label>
+          <app-input [type]="'select-pair'"
+                     [parentForm]="mantenimientoCorrectivoForm" 
+                     [control]="mantenimientoCorrectivoForm.controls.encargo1_cod" 
+                     [options]="dataSourceUsers">
+          </app-input>
+          </div>
+          
+          <div class="col">
+          <label for="encargo2_cod">Realizo 2</label>
+          <app-input [type]="'select-pair'"
+                     [parentForm]="mantenimientoCorrectivoForm" 
+                     [control]="mantenimientoCorrectivoForm.controls.encargo2_cod" 
+                     [options]="dataSourceUsers">
+          </app-input>
+          </div>
+        </div>
+
+        <div class="form-row">
+
+          <div class="col">
+          <label for="encargo3_cod">Realizo 3</label>
+          <app-input [type]="'select-pair'"
+                     [parentForm]="mantenimientoCorrectivoForm" 
+                     [control]="mantenimientoCorrectivoForm.controls.encargo3_cod" 
+                     [options]="dataSourceUsers">
+          </app-input>
+          </div>
+
+          <div class="col">
+          <label for="fechainicio">Fecha Inicio</label>
+          <app-input [type]="'datetime-local'" 
+                     [parentForm]="mantenimientoCorrectivoForm"  
+                     [control]="mantenimientoCorrectivoForm.controls.fechainicio"
+                     [placeholder]="'Ingrese fecha de inicio'">
+          </app-input>
+          </div>
+
+        </div>
+
+        <div class="form-row">
+
+          <div class="col">
+          <label for="fechaFin">Fecha fin</label>
+          <app-input [type]="'datetime-local'" 
+                     [parentForm]="mantenimientoCorrectivoForm"  
+                     [control]="mantenimientoCorrectivoForm.controls.fechaFin"
+                     [placeholder]="'Ingrese fecha de inicio'">
+          </app-input>
+          </div>
+
+          <div class="col">
+          <label for="horasProduccionAfectadas">Horas de produccion afectadas</label>
+          <app-input [type]="'onlyNumber'" 
+                     [parentForm]="mantenimientoCorrectivoForm"  
+                     [control]="mantenimientoCorrectivoForm.controls.horasProduccionAfectadas"
+                     [placeholder]="'Ingrese cantidad de horas afectadas para la produccion'">
+          </app-input>
+          </div>
+
+        </div>
+
+        <div class="form-row">
+
+          <div class="col">
+          <label for="maquina_cod">Maquina</label>
+          <app-input [type]="'select-pair'"
+                     [parentForm]="mantenimientoCorrectivoForm" 
+                     [control]="mantenimientoCorrectivoForm.controls.maquina_cod" 
+                     [options]="dataSourceMachines">
+          </app-input>
+          </div>
+      
+          <div class="col">
+          <label for="ordenTrabajo_cod">Orden de trabajo</label>
+          <app-input [type]="'select-pair'"
+                     [parentForm]="mantenimientoCorrectivoForm" 
+                     [control]="mantenimientoCorrectivoForm.controls.ordenTrabajo_cod" 
+                     [options]="dataSourceOrders">
+          </app-input>
+          </div>
+
+        </div>
+
+        <div class="form-row">
+
+          <div class="col">
+          <label for="observaciones">Observaciones</label>
+          <app-input [type]="'input'" 
+                     [parentForm]="mantenimientoCorrectivoForm"  
+                     [control]="mantenimientoCorrectivoForm.controls.observaciones"
+                     [placeholder]="'Observaciones'">
+          </app-input>
+          </div>
+        </div>
+       
+        <div style="margin-top: 3%" class="btn-group btn-group-toggle" data-toggle="buttons">
+          <app-button [name]="buttonName" [type]="'success'" type="submit"></app-button>
+          <app-button [name]="'Cancelar'" [type]="'cancel'"></app-button>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

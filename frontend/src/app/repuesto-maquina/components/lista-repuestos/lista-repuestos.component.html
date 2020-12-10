@@ -1,0 +1,90 @@
+<div class="container-fluid">
+
+  <mat-card>
+
+    <form [formGroup]="form">
+
+      <br>
+      <mat-label>Filtrar por modelo</mat-label>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-select [(value)]="modeloValue" (selectionChange)="filtrarPorModelo(modeloValue)">
+          <mat-option value="all">Todos</mat-option>
+          <mat-option *ngFor="let m of modelos" [value]="m">
+            {{m}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+          
+      <br>
+      <mat-label>Selecciona un repuesto</mat-label>
+      <br>
+
+      <mat-form-field appearance="fill">
+        
+        <mat-select formControlName="repuesto" (selectionChange)="seleccionRepuesto">
+          
+          <mat-option *ngFor="let repuesto of changeDataSource()" [value]="repuesto">
+            {{repuesto.nombre}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      
+      
+      <br>
+      Cantidad:
+      <br>
+      <input type="number" (ngValue)='cntInstalada' formControlName="cantidad_instalada">
+
+
+      <app-button [name]="['Agregar']" [type]="'primary'" (click)="agruopData()"></app-button>
+
+      <hr class="my-7">
+      <div>
+        <p>Seleccion:</p>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let r of seleccion">
+            Nombre de repuesto:
+            <b>{{ r.nombre }}</b>
+            <br>
+            Cantidad a instalar elegida:
+            <b>
+              {{r.cantidad_instalada}}
+            </b>
+            <br>
+          </li>
+
+        </ul>
+        <button (click)="deleteSelection()" class="btn btn-secondary btn-sm">Eliminar ultima seleccion</button>
+      </div>
+
+
+      <hr class="my-7">
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Selecciona una maquina</mat-label>
+        <mat-select #maquina (selectionChange)="getMaquinaForSelect($event.value)">
+          <mat-option *ngFor="let maquina of dataSourceMaquinas" [value]="maquina">
+            {{maquina.maquina_cod}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button style="margin: 1%;" type="button" class="btn btn-primary btn-sm" (click)="asociar()">
+        Confirmar
+      </button>
+
+
+
+
+
+
+    </form>
+
+  </mat-card>
+
+</div>

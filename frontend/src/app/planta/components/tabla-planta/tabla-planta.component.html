@@ -1,0 +1,10 @@
+<app-tabla class="table" [ds]='dataSourcePlants' 
+                         [columns]='columnsToDisplay' 
+                         [width]="'90%'"
+                         (clickRow)="clickedRow($event)"
+                         [title]="['Plantas']"
+                         [includeButton]="true"
+                         [nameForButton]="['Nueva planta']"
+                         [routeForButton]="['formplanta']">
+</app-tabla>
+

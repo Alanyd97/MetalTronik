@@ -1,0 +1,171 @@
+<div class="form-container">
+
+  <div class="card">
+
+    <h2 class="card-header">
+      {{section}}
+    </h2>
+
+    <div class="card-body">
+
+      <form [formGroup]="userForm" (ngSubmit)="saveForm()">
+
+        <div class="form-row">
+    
+          <div class="col">
+          <label for="nombre">Nombre</label>
+          <app-input [type]="'input'"
+                     [parentForm]="userForm" 
+                     [control]="userForm.controls.nombre"
+                     [placeholder]="'Nombre del usuario'">
+          </app-input>
+          </div>
+
+          <div class="col">
+          <label for="apellido">Apellido</label>
+          <app-input [type]="'input'"
+                     [parentForm]="userForm" 
+                     [control]="userForm.controls.apellido"
+                     [placeholder]="'Apellido del usuario'">
+          </app-input>
+          </div>
+
+        </div>
+
+        <div class="form-row">
+    
+          <div class="col">
+          <label for="dni">Dni</label>
+          <app-input [type]="'onlyNumber'"
+                     [parentForm]="userForm" 
+                     [control]="userForm.controls.dni"
+                     [placeholder]="'DNI del usuario'">
+          </app-input>
+          </div>
+
+          <div class="col">
+          <label for="fnacimiento">Fecha de nacimiento</label>
+          <app-input [type]="'datetime-local'" 
+               [parentForm]="userForm"  
+               [control]="userForm.controls.fnacimiento"
+               [placeholder]="'Fecha de nacimiento'">
+          </app-input>
+          </div>
+
+        </div>
+
+        <div class="form-row">
+    
+          <div class="col">
+          <label for="cargo_id">Cargo</label>
+          <app-input [type]="'select-pair'"
+                     [parentForm]="userForm" 
+                     [control]="userForm.controls.cargo_id"
+                     [options]="dataSourceCargos">
+          </app-input>
+          </div>
+    
+          <div class="col">
+          <label for="legajo">Legajo</label>
+          <app-input [type]="'onlyNumber'"
+                     [parentForm]="userForm" 
+                     [control]="userForm.controls.legajo"
+                     [placeholder]="'Legajo del empleado'">
+          </app-input>
+          </div>
+
+        </div>
+
+        <div class="form-row">
+    
+          <div class="col">
+          <label for="nombre_usuario">Nombre de usuario</label>
+          <app-input [type]="'input'"
+                     [parentForm]="userForm" 
+                     [control]="userForm.controls.nombre_usuario"
+                     [placeholder]="'Nombre de usuario para el sistema'">
+          </app-input>
+          </div>
+    
+          <div class="col">
+          <label for="contrasenia">Contraseña de usuario</label>
+          <app-input [type]="'input'"
+                     [parentForm]="userForm" 
+                     [control]="userForm.controls.contrasenia"
+                     [placeholder]="'Contraseña para el sistema'">
+          </app-input>
+          </div>
+
+        </div>
+
+        <div class="form-row">
+    
+          <div class="col">
+          <label for="ciudad">Ciudad</label>
+          <app-input [type]="'input'"
+                     [parentForm]="userForm" 
+                     [control]="userForm.controls.ciudad"
+                     [placeholder]="'Ciudad natal'">
+          </app-input>
+          </div>
+          
+          <div class="col">
+          <label for="pais">Pais</label>
+          <app-input [type]="'input'"
+                     [parentForm]="userForm" 
+                     [control]="userForm.controls.pais"
+                     [placeholder]="'Pais natal'">
+          </app-input>
+          </div>
+
+        </div>
+
+        <div class="form-row">
+    
+          <div class="col">
+          <label for="provincia">Provincia</label>
+          <app-input [type]="'input'"
+                     [parentForm]="userForm" 
+                     [control]="userForm.controls.provincia"
+                     [placeholder]="'provincia'">
+          </app-input>
+          </div>
+
+          <div class="col">
+            <label for="direccion">Direccion</label>
+            <app-input [type]="'input'"
+                       [parentForm]="userForm" 
+                       [control]="userForm.controls.direccion"
+                       [placeholder]="'Direccion de residencia'">
+            </app-input>
+          </div>
+
+
+        </div>
+        
+
+        <div class="form-row">
+
+          <div class="col">
+          <label for="correo_electronico">Correo electronico</label>
+          <app-input [type]="'input'"
+                     [parentForm]="userForm" 
+                     [control]="userForm.controls.correo_electronico"
+                     [placeholder]="'Cuenta de correo'">
+          </app-input>
+          </div>
+    
+        </div>
+
+        <div style="margin-top: 3%" class="btn-group btn-group-toggle" data-toggle="buttons">
+          <app-button [name]="buttonName" type="submit" [type]="'success'"></app-button>
+          <app-button [name]="'Cancelar'" [type]="'cancel'"></app-button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

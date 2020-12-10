@@ -1,0 +1,9 @@
+<app-tabla class="table" [ds]='dataSourceSectors' 
+                         [columns]='columnsToDisplay' 
+                         [width]="'90%'"
+                         (clickRow)="clickedRow($event)"
+                         [title]="['Sectores']"
+                         [includeButton]="true"
+                         [nameForButton]="['Nuevo sector']"
+                         [routeForButton]="['formsector']">
+</app-tabla>
